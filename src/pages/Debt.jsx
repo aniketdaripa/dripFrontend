@@ -5,7 +5,7 @@ export default function Debt() {
     const [creditData, setCreditData] = useState([]);
     useEffect(() => {
         axios
-          .get("http://localhost:3500/getCreditData", {
+          .get("https://dripbackend.onrender.com/getCreditData", {
             params: { userId: localStorage.getItem("userName") },
           })
           .then((response) => {

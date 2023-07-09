@@ -58,13 +58,13 @@ const SideBar = () => {
   const handleSubmit = async () => {
     const formData = new FormData();
     formData.append("image", image);
-    await axios.post("http://localhost:3500/uploadImage", formData, {
+    await axios.post("https://dripbackend.onrender.com/uploadImage", formData, {
       params: { userId: localStorage.getItem("userName") },
     });
   };
   useEffect(() => {
     axios
-      .get("http://localhost:3500/getImageData", {
+      .get("https://dripbackend.onrender.com/getImageData", {
         params: { userId: localStorage.getItem("userName") },
       })
       .then((response) => {
@@ -142,7 +142,7 @@ const SideBar = () => {
                 <Box display="flex" justifyContent="center" alignItems="center">
                   {imageUrl && (
                     <img
-                      src={`http://localhost:3500/${imageUrl}`}
+                      src={`https://dripbackend.onrender.com/${imageUrl}`}
                       alt="profile-user"
                       width="100px"
                       height="100px"

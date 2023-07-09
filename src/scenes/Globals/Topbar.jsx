@@ -49,7 +49,7 @@ const Topbar = () => {
   const [title, setTitle]=useState("");
   useEffect(() => {
     let res = axios
-      .get("http://localhost:3500/lessStockData", {
+      .get("https://dripbackend.onrender.com/lessStockData", {
         params: { userId: localStorage.getItem("userName") },
       })
       .then((response) => {
@@ -58,7 +58,7 @@ const Topbar = () => {
       });
 
     axios
-      .get("http://localhost:3500/soonExpiryStock", {
+      .get("https://dripbackend.onrender.com/soonExpiryStock", {
         params: { userId: localStorage.getItem("userName") },
       })
       .then((response) => {

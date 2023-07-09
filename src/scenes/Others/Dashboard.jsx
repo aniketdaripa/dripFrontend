@@ -17,14 +17,14 @@ export default function Dashboard() {
   const colors = tokens(theme.palette.mode);
   useEffect(() => {
      axios
-      .get("http://localhost:3500/getCurrStock", {
+      .get("https://dripbackend.onrender.com/getCurrStock", {
         params: { userId: localStorage.getItem("userName") },
       })
       .then((response) => {
         setAllStockData(response.data);
       });
       axios
-      .get("http://localhost:3500/getAllBillData", {
+      .get("https://dripbackend.onrender.com/getAllBillData", {
         params: { userId: localStorage.getItem("userName") },
       })
       .then((response) => {
@@ -33,7 +33,7 @@ export default function Dashboard() {
       });
 
       axios
-      .get("http://localhost:3500/lessStockData", {
+      .get("https://dripbackend.onrender.com/lessStockData", {
         params: { userId: localStorage.getItem("userName") },
       })
       .then((response) => {
@@ -44,7 +44,7 @@ export default function Dashboard() {
       });
 
       axios
-      .get("http://localhost:3500/soonExpiryStock", {
+      .get("https://dripbackend.onrender.com/soonExpiryStock", {
         params: { userId: localStorage.getItem("userName") },
       })
       .then((response) => {

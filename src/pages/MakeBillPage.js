@@ -10,7 +10,7 @@ const MakeBillPage = () => {
   const [allMedData,setAllMedData]=useState([]);
   useEffect(()=>{
     let res = axios
-      .get("http://localhost:3500/getAllMedData", {
+      .get("https://dripbackend.onrender.com/getAllMedData", {
         params: { userId: localStorage.getItem("userName") },
       })
       .then((response) => {
@@ -150,7 +150,7 @@ const MakeBillPage = () => {
       doctorDiscount: doctorDiscount,
     };
     const res = await axios.post(
-      "http://localhost:3500/addBillPost",
+      "https://dripbackend.onrender.com/addBillPost",
       newBillData,
       {
         params: { userId: localStorage.getItem("userName") },

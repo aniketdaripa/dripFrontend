@@ -11,7 +11,7 @@ const ImportData = () => {
     const formData = new FormData();
     formData.append("dataFile", dataFile);
     await axios
-      .post("http://localhost:3500/uploadImportData", formData, {
+      .post("https://dripbackend.onrender.com/uploadImportData", formData, {
         params: { userid: localStorage.getItem("userName") },
       })
       .then((res) => {

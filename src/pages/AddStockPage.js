@@ -36,7 +36,7 @@ const AddStockPage = () => {
   const handleSubmit = async () => {
     const formData = new FormData();
     formData.append("dataFile", dataFile);
-    await axios.post("http://localhost:3500/uploadImportData", formData, {
+    await axios.post("https://dripbackend.onrender.com/uploadImportData", formData, {
       params: { userid: localStorage.getItem("userName") },
     }).then((res)=>{
       console.log(res);
